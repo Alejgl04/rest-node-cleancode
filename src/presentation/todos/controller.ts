@@ -22,7 +22,22 @@ export class TodosController {
     ( todo )
       ? res.json( todo )
       : res.status(404).json({ error: `TODO with id ${id} not found`})
+  }
 
+  public createTodo = ( req: Request, res: Response ) => {
+
+    const { text } = req.body;
+    if ( !text ) return res.status(400).json({error: `Text proterty is required`});
+
+    const newTodo = {
+      id: todos.length + 1,
+      text: text,
+      createdAt: new Date()
+    }
+
+    todos.push(newTodo)
+
+    return res.json( newTodo );
   }
 
 }

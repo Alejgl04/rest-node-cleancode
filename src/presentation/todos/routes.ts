@@ -11,6 +11,8 @@ export class TodosRoutes {
 
     router.get('/', todoController.getTodos);
     router.get('/:id', todoController.getTodoById);
+    
+    router.post('/', todoController.createTodo);
 
     return router;
     
