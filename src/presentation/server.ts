@@ -25,7 +25,7 @@ export class Server {
     this.app.use( express.urlencoded({ extended: true }) ); //urlenconded form
 
     // Public folder
-    this.app.use( express.static('public') );
+    // this.app.use( express.static('public') );
 
     // this.app.get('*', (req, res) => {
     //   const indexPath = path.join(__dirname + '../../../public/index.html');
