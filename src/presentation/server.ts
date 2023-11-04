@@ -1,4 +1,5 @@
 import express, { Router } from 'express';
+import path from 'path';
 
 interface Options {
   port: number;
@@ -26,6 +27,10 @@ export class Server {
     // Public folder
     this.app.use( express.static('public') );
 
+    this.app.get('*', (req, res) => {
+      const indexPath = path.join(__dirname + '../../../public/index.html');
+      res.sendFile(indexPath);
+    });
     // Routes
     this.app.use( this.routes );
 
