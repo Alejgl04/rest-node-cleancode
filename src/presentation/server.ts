@@ -23,16 +23,17 @@ export class Server {
     // Middlewares
     this.app.use( express.json() ); //raw
     this.app.use( express.urlencoded({ extended: true }) ); //urlenconded form
-
+    
     // Public folder
-    // this.app.use( express.static('public') );
-
+    this.app.use( express.static('public') );
+    
+    this.app.use( this.routes );
+  
     // this.app.get('*', (req, res) => {
     //   const indexPath = path.join(__dirname + '../../../public/index.html');
     //   res.sendFile(indexPath);
     // });
     // Routes
-    this.app.use( this.routes );
 
     this.app.listen( this.port, () => {
       console.log(`Server running on port ${this.port}`);
