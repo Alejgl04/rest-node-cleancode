@@ -114,7 +114,6 @@ describe('Todo route testing', () => {
 
   });
 
-  //! TODO: MAKE CUSTOM ERRORS 
   test('Should return an 404 if Todo not found', async() => {
     const { body } = await request(testServer.app)
     .put(`/api/todos/999`)
@@ -160,7 +159,7 @@ describe('Todo route testing', () => {
 
     const { body } = await request(testServer.app)
     .delete(`/api/todos/999`)
-    .expect(400);
+    .expect(404);
     
     expect(body).toEqual({ error: expect.any(String) });
   });
