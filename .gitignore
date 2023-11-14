@@ -8,3 +8,4 @@ postgres/
 prisma/migrations
 coverage/
 .env.test
+mongo/
