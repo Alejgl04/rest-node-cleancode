@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 
   email: {
     type: String,
-    require: [true, 'Email is required'],
+    required: [true, 'Email is required'],
     unique: true,
   },
 
@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
 
   password: {
     type: String,
-    require: [true, 'Password is required']
+    required: [true, 'Password is required']
   },
 
   role: {
